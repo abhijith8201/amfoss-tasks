@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  
+	  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style1.css" />
+    <title>JS</title>
+     <script src="index.js"></script>
+     <script>
+		clickCounter();
+
+function clickCounter() {
+  if (localStorage.clickcount) {
+    localStorage.clickcount = Number(localStorage.clickcount)+1;
+  } else {
+    localStorage.clickcount = 0;
+  }
+  document.getElementById("ts8").innerHTML = localStorage.clickcount;
+}
+
+function startTime(){
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds(); 
+  return [ h, m, s ].join(':')
+}
+function shwcrtym(){
+	alert(startTime());
+	
+}
+
+		</script>
+		<script>//change bg color
+			var el_up = document.getElementById("GFG_UP");
+			var el_down = document.getElementById("GFG_DOWN");
+			var str = "Click on button to change the background color";
+		
+			el_up.innerHTML = str;
+		
+			function changeColor(color) {
+				document.body.style.background = color;
+			}
+			
+			function gfg_Run() {
+				changeColor('yellow');
+				el_down.innerHTML = "Background Color changed";
+			}		
+		</script>
+		<script>
+			function con_Run(){
+			let a=0;
+			while(a<100)
+			{
+				console.log("I did it")
+				a++;
+				
+			}
+		}
+			</script>
+		<style>
+			.center {
+  margin: auto;
+  width: 100%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+			</style>
+    
+  </head>
+  <body>
+	  <p id = "GFG_UP" style =
+			"font-size: 16px; font-weight: bold;">	
+		</p>
+		<p id = "GFG_DOWN" style =
+			"color:green; font-size: 20px; font-weight: bold;">
+		</p>
+	<div class="btns">
+    <!--On click of Button-1 store something in localStorage-->
+    <button class="button"
+		onclick="clickCounter()"
+		type="button"
+    
+    >Button-1</button>
+    <!--On click of Button-2 show a popup with current time-->
+    
+    <button class="button"
+		onclick="shwcrtym()"
+		type="button">Button-2</button>
+    <!--On click of Button-3 change the background-->
+    <button class="button"
+    onclick = "gfg_Run()">Button-3</button>
+    <!--On click of Button-4 refresh the page-->
+    <button class="button"
+    onclick="window.location.reload();">Button-4</button>
+    <!--On click of Button-5 open a new window-->
+    <button class="button"
+    onclick="window.open('https://www.google.com/')">Button-5</button>
+    
+    <!--On click of Button-6 spam the console with 'I did it'-->
+    <button class="button"
+    onclick="con_Run()">Button-6</button>
+    
+    
+ 
+    
+      
+      <button class="button"
+       onclick="window.location.href='chart.html'">Next</button>
+      
+    
+ 
+		
+		<div class="bottomleft">
+		<p style="color:white;">Number of clicks:<p id="ts8"></p></p>
+		
+		</div></div>
+  </body>
+</html>
